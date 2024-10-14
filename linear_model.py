@@ -46,6 +46,15 @@ class LinearModel:
             print(f"Coeficientes: {self.model.coef_}")
         else:
             print("Sem métricas computadas. Treine o modelo primeiro.")
+    
+
+    def run_prediction(self, data):
+        """Gera uma predição multiplicando os coeficientes. É necessário que o modelo esteja treinado."""
+        if self.metrics != {}:
+            weights = self.model.coef_
+            return sum([weights[i] * data[i] for i in range(len(weights))])
+        else:
+            print("Treine o modelo primeiro.")
 
 
 if __name__ == "__main__":

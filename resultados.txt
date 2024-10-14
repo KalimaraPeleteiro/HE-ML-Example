@@ -1,0 +1,18 @@
+Casos de Teste
+
+1. Um homem de 33 anos, com 29 de BMI, 3 Filhos, Fumante e Morador da Região 02. [33, 1, 29, 3, 1, 2]
+Resultado do Modelo Padrão                  -> 44727.89551390955
+Resultado do Envio de Dados com Homomorfia  -> 44727.89551390954
+
+Diferença de 1.10^-11
+
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+

@@ -2,6 +2,8 @@
 import phe as paillier
 import json
 
+from linear_model import LinearModel
+
 
 def generate_key_pair():
     """
@@ -51,7 +53,7 @@ def encrypt_data(pubKey, data):
 if __name__ == '__main__':
 
     # Passo 01 - Chaves Criptográficas são Geradas
-    generate_key_pair()
+    # generate_key_pair()       # É necessário gerar apenas uma vez...
 
     # Passo 02 - Com as chaves em mão, gerar dados criptográficos e mandar para o servidor.
     pubKey, privKey = retrive_keys_from_vault()
@@ -62,3 +64,25 @@ if __name__ == '__main__':
                            )
     with open('network/data_to_server.json', 'w') as file :
         json.dump(payload, file)
+
+    # ...
+    # ...
+    # ...
+    # Assumindo que o Servidor Respondeu...
+
+    # Passo 03 - Verificar o Resultado do Servidor
+    with open('network/server_response.json', 'r') as file:
+        response = json.load(file)
+        
+        pubKey_response = paillier.PaillierPublicKey(n=int(response['public_key']['n']))
+        result = paillier.EncryptedNumber(pubKey_response, int(response['values'][0]), 
+                                                           int(response['values'][1]))
+
+        # Passo 04 - Se o resultado de Chave Pública bater, Descriptografar a Resposta
+        if (pubKey_response == pubKey):
+            print(f'O resultado retornado do servidor é {privKey.decrypt(result)}')
+    
+    # Passo Final - Rodando uma Verificação com dados descriptografados para validar resposta.
+    model = LinearModel(dataset="data/insurance-unscaled.csv")
+    model.train("charges")
+    print(f'O resultado do modelo é {model.run_prediction([33, 1, 29, 3, 1, 2])}')

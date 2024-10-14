@@ -25,8 +25,8 @@ def generate_results(data):
     weights = model.model.coef_
 
     pubKey = data["public_key"]
-    pubkey= paillier.PaillierPublicKey(n=int(pubKey['n']))
-    encrypted_data = [paillier.EncryptedNumber(pubkey, int(x[0], int(x[1]))) for x in data['values']]
+    pubKey= paillier.PaillierPublicKey(n=int(pubKey['n']))
+    encrypted_data = [paillier.EncryptedNumber(pubKey, int(x[0], int(x[1]))) for x in data['values']]
 
     return sum([weights[i] * encrypted_data[i] for i in range(len(weights))]), pubKey
 
@@ -34,7 +34,7 @@ def generate_results(data):
 def encrypt_result(result, pubKey):
     "Criptografa os dados que serão enviados de volta para o cliente."
     payload = {
-        'public_key': {'n': pubKey['n']},
+        'public_key': {'n': pubKey.n},
         'values': (str(result.ciphertext()), result.exponent)
     }
     payload_to_client = json.dumps(payload)
