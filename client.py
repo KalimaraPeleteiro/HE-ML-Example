@@ -56,7 +56,9 @@ if __name__ == '__main__':
     # Passo 02 - Com as chaves em mão, gerar dados criptográficos e mandar para o servidor.
     pubKey, privKey = retrive_keys_from_vault()
     payload = encrypt_data(pubKey, 
-                           [17, 33, 1, 29, 3, 1, 2] # Esses são os dados que o cliente quer enviar.
+                           # Esses são os dados que o cliente quer enviar.
+                           [33, 1, 29, # 33 Anos de Idade, Masculino, BMI de 29 
+                            3, 1, 2]   # Com 03 Filhos, Fumante e Mora na Região 02.
                            )
     with open('network/data_to_server.json', 'w') as file :
         json.dump(payload, file)
