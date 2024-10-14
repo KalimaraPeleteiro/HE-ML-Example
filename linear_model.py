@@ -47,5 +47,6 @@ class LinearModel:
 
 
 if __name__ == "__main__":
-    model = LinearModel()
+    model = LinearModel(dataset="data/insurance-unscaled.csv")
+    model.train("charges")
     model.get_results()
