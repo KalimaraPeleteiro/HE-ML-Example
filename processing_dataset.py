@@ -28,4 +28,4 @@ def scale_dataset(df, y_column):
 
 df = pd.read_csv("data/insurance.csv")
 df = prepare_dataset(df)
-df.to_csv("data/insurance-unscaled.csv")
+df.to_csv("data/insurance-unscaled.csv", index = False)

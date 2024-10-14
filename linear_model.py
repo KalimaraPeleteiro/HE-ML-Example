@@ -21,6 +21,7 @@ class LinearModel:
         . Erro Médio Quadrático (MSE) ->          Média dos quadrados das diferenças.
         . Raiz do Erro Médio Quadrático (RMSE) -> Versão do MSE mais sensível a Outliers.
         . Coeficiente R² ->                       Proporção da Variância da Variável Predita. Quanto mais próximo de 1, melhor ajuste.
+        . Coeficiente Geral (coef_) ->            Os pesos atribuídos a cada variável. É automaticamente assinalado ao modelo.
         """
 
         y = self.dataset[last_column]
@@ -42,6 +43,7 @@ class LinearModel:
             print("Métricas de Treinamento...\n")
             for metric, value in self.metrics.items():
                 print(f"{metric}: {value:.4f}")
+            print(f"Coeficientes: {self.model.coef_}")
         else:
             print("Sem métricas computadas. Treine o modelo primeiro.")
 
