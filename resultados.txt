@@ -4,15 +4,38 @@ Casos de Teste
 Resultado do Modelo Padrão                  -> 44727.89551390955
 Resultado do Envio de Dados com Homomorfia  -> 44727.89551390954
 
-Diferença de 1.10^-11
+2. Uma mulher de 22 anos, com 22 de BMI, sem filhos, não fumante e morador da Região 01. [22, 0, 22, 0, 0, 1]
+Resultado do Modelo Padrão                  -> 13619.215127518462
+Resultado do Envio de Dados com Homomorfia  -> 13619.215127518464
 
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
+3. Um homem de 45 anos, com 30 de BMI, 2 filhos, fumante e morador da Região 03. [45, 1, 30, 2, 1, 3]
+Resultado do Modelo Padrão                  -> 48043.679762059522
+Resultado do Envio de Dados com Homomorfia  -> 48043.679762059524
 
+4. Uma mulher de 38 anos, com 25 de BMI, 1 filho, não fumante e moradora da Região 02. [38, 0, 25, 1, 0, 2]
+Resultado do Modelo Padrão                  -> 19771.123746319678
+Resultado do Envio de Dados com Homomorfia  -> 19771.123746319678
+
+5. Um homem de 50 anos, com 32 de BMI, 4 filhos, fumante e morador da Região 01. [50, 1, 32, 4, 1, 1]
+Resultado do Modelo Padrão                  -> 50344.800157548496
+Resultado do Envio de Dados com Homomorfia  -> 50344.800157548496
+
+6. Uma mulher de 29 anos, com 28 de BMI, 0 filhos, não fumante e moradora da Região 03. [29, 0, 28, 0, 0, 3]
+Resultado do Modelo Padrão                  -> 18282.29120201366
+Resultado do Envio de Dados com Homomorfia  -> 18282.29120201366
+
+7. Um homem de 60 anos, com 35 de BMI, 3 filhos, fumante e morador da Região 02. [60, 1, 35, 3, 1, 2]
+Resultado do Modelo Padrão                  -> 53817.890529542725
+Resultado do Envio de Dados com Homomorfia  -> 53817.890529542725
+
+8. Uma mulher de 31 anos, com 24 de BMI, 2 filhos, não fumante e moradora da Região 01. [31, 0, 24, 2, 0, 1]
+Resultado do Modelo Padrão                  -> 17761.108686669766
+Resultado do Envio de Dados com Homomorfia  -> 17761.108686669762
+
+9. Um homem de 40 anos, com 27 de BMI, 1 filho, fumante e morador da Região 03. [40, 1, 27, 1, 1, 3]
+Resultado do Modelo Padrão                  -> 45162.54226438959
+Resultado do Envio de Dados com Homomorfia  -> 45162.54226438959
+
+10. Uma mulher de 25 anos, com 23 de BMI, 0 filhos, não fumante e moradora da Região 02. [25, 0, 23, 0, 0, 2]
+Resultado do Modelo Padrão                  -> 15140.562446671778
+Resultado do Envio de Dados com Homomorfia  -> 15140.562446671778

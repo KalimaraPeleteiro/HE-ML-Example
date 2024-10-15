@@ -52,16 +52,14 @@ def encrypt_data(pubKey, data):
 # Fluxo do CLIENTE
 if __name__ == '__main__':
 
+    DATA_TO_SERVER = [25, 0, 23, 0, 0, 2]
+
     # Passo 01 - Chaves Criptográficas são Geradas
-    # generate_key_pair()       # É necessário gerar apenas uma vez...
+    #generate_key_pair()       # É necessário gerar apenas uma vez...
 
     # Passo 02 - Com as chaves em mão, gerar dados criptográficos e mandar para o servidor.
     pubKey, privKey = retrive_keys_from_vault()
-    payload = encrypt_data(pubKey, 
-                           # Esses são os dados que o cliente quer enviar.
-                           [33, 1, 29, # 33 Anos de Idade, Masculino, BMI de 29 
-                            3, 1, 2]   # Com 03 Filhos, Fumante e Mora na Região 02.
-                           )
+    payload = encrypt_data(pubKey, DATA_TO_SERVER)
     with open('network/data_to_server.json', 'w') as file :
         json.dump(payload, file)
 
@@ -85,4 +83,4 @@ if __name__ == '__main__':
     # Passo Final - Rodando uma Verificação com dados descriptografados para validar resposta.
     model = LinearModel(dataset="data/insurance-unscaled.csv")
     model.train("charges")
-    print(f'O resultado do modelo é {model.run_prediction([33, 1, 29, 3, 1, 2])}')
+    print(f'O resultado do modelo é {model.run_prediction(DATA_TO_SERVER)}')
